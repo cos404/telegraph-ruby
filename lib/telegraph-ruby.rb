@@ -2,84 +2,49 @@ require "request.rb"
 
 class Telegraph include Request
 
-  def createAccount(short_name, options = {})
-    path =  "createAccount?short_name=#{short_name}"
-    path << "&author_name=#{options[:author_name]}" if options[:author_name]
-    path << "&author_url=#{options[:author_url]}"   if options[:author_url]
-
-    post(path)
+  def createAccount(query)
+    method = 'createAccount'
+    post(method, query)
   end
 
-  def createPage(access_token, options = {})
-    path = "createPage?access_token=#{access_token}"
-    path << "&title=#{options[:title]}"                   if options[:title]
-    path << "&author_name=#{options[:author_name]}"       if options[:author_name]
-    path << "&author_url=#{options[:author_url]}"         if options[:author_url]
-    path << "&content=#{options[:content]}"               if options[:content]
-    path << "&return_content=#{options[:return_content]}" if options[:return_content]
-
-    post(path)
+  def createPage(query)
+    method = 'createPage'
+    post(method, query)
   end
 
-  def editAccountInfo(access_token, options = {})
-    path = "editAccountInfo?access_token=#{access_token}"
-    path << "&short_name=#{options[:short_name]}"   if options[:short_name]
-    path << "&author_name=#{options[:author_name]}" if options[:author_name]
-    path << "&author_url=#{options[:author_url]}"   if options[:author_url]
-
-    post(path)
+  def editAccountInfo(query)
+    method = 'editAccountInfo'
+    post(method, query)
   end
 
-  def editPage(access_token, options = {})
-    path = "createPage?access_token=#{access_token}"
-    path << "&path=#{options[:path]}"                     if options[:path]
-    path << "&title=#{options[:title]}"                   if options[:title]
-    path << "&content=#{options[:content]}"               if options[:content]
-    path << "&author_name=#{options[:author_name]}"       if options[:author_name]
-    path << "&author_url=#{options[:author_url]}"         if options[:author_url]
-    path << "&return_content=#{options[:return_content]}" if options[:return_content]
-
-    post(path)
+  def editPage(query)
+    method = 'editPage'
+    post(method, query)
   end
 
-  def getAccountInfo(access_token, options = {})
-    path = "createPage?access_token=#{access_token}"
-    path << "&fields=#{options[:fields]}" if options[:fields]
-
-    post(path)
+  def getAccountInfo(query)
+    method = 'getAccountInfo'
+    post(method, query)
   end
 
-  def getPage(options = {})
-    path = "createPage?path=#{options[:path]}"
-    path << "&return_content=#{options[:return_content]}" if options[:return_content]
-
-    post(path)
+  def getPage(query)
+    method = 'getPage'
+    post(method, query)
   end
 
-  def getPageList(access_token, options = {})
-    path = "createPage?access_token=#{access_token}"
-    path << "&offset=#{options[:offset]}" if options[:offset]
-    path << "&limit=#{options[:limit]}"   if options[:limit]
-
-    post(path)
+  def getPageList(query)
+    method = 'getPageList'
+    post(method, query)
   end
 
-  def getViews(options = {})
-    path = "createPage?path=#{options[:path]}"
-    path << "&year=#{options[:year]}"   if options[:year]
-    path << "&month=#{options[:month]}" if options[:month]
-    path << "&day=#{options[:day]}"     if options[:day]
-    path << "&hour=#{options[:hour]}"   if options[:hour]
-
-    post(path)
+  def getViews(query)
+    method = 'getViews'
+    post(method, query)
   end
 
   def revokeAccessToken(access_token)
-    path = "createPage?access_token=#{access_token}"
-
-    post(path)
+    method = 'revokeAccessToken'
+    post(method, access_token)
   end
 
-
 end
-

@@ -1,6 +1,6 @@
 # telegraph-ruby
 
-Ruby wrapper for [Telegra.ph API](http://telegra.ph/api).
+A Ruby interface to [Telegra.ph API](http://telegra.ph/api).
 
 [![Gem Version](https://badge.fury.io/rb/telegraph-ruby.svg)](https://badge.fury.io/rb/telegraph-ruby)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/cos404)

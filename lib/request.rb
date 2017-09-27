@@ -1,13 +1,9 @@
 require 'httparty'
 
 module Request
-  def get(path)
-    data = HTTParty.get('https://api.telegra.ph/' + path).parsed_response
-    data['result']
-  end
-
-  def post(path)
-    data = HTTParty.post('https://api.telegra.ph/' + path).parsed_response
-    data['result']
+  def post(method, query)
+    data = HTTParty.post("https://api.telegra.ph/#{method}", query: query).parsed_response
+    data['result'] if data['result']
+    data
   end
 end
