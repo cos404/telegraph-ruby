@@ -2,44 +2,44 @@ require "request.rb"
 
 class Telegraph include Request
 
-  def createAccount(query)
+  def createAccount(body)
     method = 'createAccount'
-    post(method, query)
+    post(method, body)
   end
 
-  def createPage(query)
+  def createPage(body)
     method = 'createPage'
-    post(method, query)
+    post(method, body)
   end
 
-  def editAccountInfo(query)
+  def editAccountInfo(body)
     method = 'editAccountInfo'
-    post(method, query)
+    post(method, body)
   end
 
-  def editPage(query)
+  def editPage(body)
     method = 'editPage'
-    post(method, query)
+    post(method, body)
   end
 
-  def getAccountInfo(query)
+  def getAccountInfo(body)
     method = 'getAccountInfo'
-    post(method, query)
+    post(method, body)
   end
 
-  def getPage(query)
+  def getPage(body)
     method = 'getPage'
-    post(method, query)
+    post(method, body)
   end
 
-  def getPageList(query)
+  def getPageList(body)
     method = 'getPageList'
-    post(method, query)
+    post(method, body)
   end
 
-  def getViews(query)
+  def getViews(body)
     method = 'getViews'
-    post(method, query)
+    post(method, body)
   end
 
   def revokeAccessToken(access_token)
